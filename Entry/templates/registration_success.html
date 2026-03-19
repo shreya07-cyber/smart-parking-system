@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phoenix Mall - Registration Successful</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .mall-name {
+            color: #007bff;
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        .success-message {
+            color: #28a745;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+        .info-box {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .info-label {
+            color: #6c757d;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        .user-id {
+            color: #007bff;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .slot {
+            color: #28a745;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .qr-code {
+            margin: 20px 0;
+            max-width: 200px;
+        }
+        .home-btn {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .home-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mall-name">PHOENIX MALL</h1>
+
+        <div class="success-message">Registration Successful!</div>
+
+        <div class="info-box">
+            <div class="info-label">YOUR USER ID</div>
+            <div class="user-id">{{ user_id }}</div>
+
+            <div class="info-label">VEHICLE NUMBER</div>
+            <div class="user-id">{{ vehicle_no }}</div>
+
+            <div class="info-label">ALLOCATED SLOT</div>
+            <div class="slot">{{ slot_allocated }}</div>
+        </div>
+
+        <div>
+            <img src="{{ qr_path }}" alt="User QR Code" class="qr-code">
+            <p>Scan this QR code at exit</p>
+        </div>
+
+        <a href="/" class="home-btn">Register Another Vehicle</a>
+    </div>
+
+    <script>
+        Swal.fire({
+            title: 'Registration Successful!',
+            text: 'Welcome to Phoenix Mall Parking!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phoenix Mall - Payment Success</title>
+    <style>
+        :root {
+            --primary-blue: #1565c0;
+            --secondary-blue: #0d47a1;
+            --light-blue: #e3f2fd;
+            --accent-blue: #64b5f6;
+            --success-green: #4caf50;
+        }
+        
+        body {
+            background-color: var(--light-blue);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .success-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .success-icon {
+            font-size: 80px;
+            color: var(--success-green);
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            color: var(--secondary-blue);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .message {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .user-id {
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+        
+        .payment-details {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            text-align: left;
+        }
+        
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .timer {
+            font-size: 16px;
+            color: #666;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        
+        .mall-name {
+            color: var(--primary-blue);
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="mall-name">PHOENIX MALL</div>
+        
+        <div class="success-card">
+            <div class="success-icon">✅</div>
+            <h2>Payment Successful!</h2>
+            
+            <div class="message">
+                Thank you, User <span class="user-id">{{ user_id }}</span>.<br>
+                Your payment of <strong>₹{{ total_charge }}</strong> has been processed successfully.
+            </div>
+            
+            <div class="payment-details">
+                <div class="detail-row">
+                    <span>Parking Slot Freed:</span>
+                    <span><strong>{{ slot_freed }}</strong></span>
+                </div>
+            </div>
+            
+            <div class="timer">
+                Please exit within 15 minutes. Have a safe journey!
+            </div>
+        </div>
+        
+        <div class="footer">
+            Thank you for visiting Phoenix Mall
+        </div>
+    </div>
+    
+    <script>
+        // Display date and time of payment
+        document.addEventListener('DOMContentLoaded', function() {
+            const now = new Date();
+            const timeElement = document.createElement('div');
+            timeElement.style.marginTop = '15px';
+            timeElement.style.fontSize = '14px';
+            timeElement.style.color = '#666';
+            timeElement.textContent = 'Payment completed on: ' + now.toLocaleString();
+            document.querySelector('.success-card').appendChild(timeElement);
+        });
+    </script>
+</body>
+</html>
