@@ -226,6 +226,14 @@ python admin.py
 - For production use, change admin credentials and store them securely (e.g., hashed in DB).
 
 ---
+---
+
+## 🎥 Project Demo
+
+
+https://github.com/user-attachments/assets/abe070ac-8844-4ec7-a6e0-802514aacafd
+
+
 
 ## 📄 License
 
